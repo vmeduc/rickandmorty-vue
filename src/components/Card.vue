@@ -32,9 +32,6 @@ export default {
 </script>
 
 <style scoped>
-/* .card {
-  background-color: #fde;
-} */
 .card > div {
   display: flex;
   justify-content: space-between;

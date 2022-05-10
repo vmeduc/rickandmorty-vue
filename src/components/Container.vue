@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 #container {
-  height: 90%;
+  height: 91%;
   overflow: auto;
 }
 #wrapper {

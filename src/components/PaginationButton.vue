@@ -1,5 +1,8 @@
 <template>
-  <span @click="onClick" :class="{'disable': disable}">
+  <span 
+    @click="!disable ? $emit('click') : undefined" 
+    :class="{'enable': !disable, 'disable': disable}"
+  >
     <slot></slot>
   </span>
 </template>
@@ -13,11 +16,6 @@ export default {
       required: false,
       default: false,
     }
-  },
-  methods: {
-    onClick() {
-      if (!this.disable) this.$emit('click')
-    }
   }
 }
 </script>
@@ -26,6 +24,13 @@ export default {
 span {
   margin: auto;
   cursor: pointer;
+  user-select: none;
+}
+.enable:hover {
+  color: grey;
+}
+.enable:active {
+  color: white;
 }
 .disable {
   color: grey;
